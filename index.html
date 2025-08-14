@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>REJ | TECH Computer Company</title>
+  <link rel="icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="styles/index.css">
+
+</head>
+<body>
+  
+  <header>
+    <div class="startHeader">
+      <a class="start" id="homepage">REJ | TECH</a>
+      <a class="start" id="aiBuilder"><img src="images/robot-icon.png" alt="robot-icon" class="startHeaderImage">AI Builder</a>
+    </div>
+    <div class="endHeader">
+      <a class="end" id="trackingOrder"><img src="images/transit-icon.png" alt="delivery-icon" class="endHeaderImage">Tracking Order</a>
+      <a class="end" id="cart"><img src="images/cart-icon.png" alt="cart-icon" class="endHeaderImage">Cart</a>
+      <a class="end" id="userAccount"><img src="images/user1-icon.png" alt="user-icon" class="endHeaderImage">Sign in</a>
+    </div>
+  </header>
+
+
+
+  <div class="homepage">
+  <div class="homeAutoNextContainer"></div>
+  <div class="homeContent">
+    <a href="productCategory.html?category=laptop" class="homeCategory"><img src="images/laptop-icon.png" alt="laptop-icon" class="homeCategoryImage">Laptop</a>
+    <a href="productCategory.html?category=parts" class="homeCategory"><img src="images/processor-icon.png" alt="processor-icon" class="homeCategoryImage">PC Parts</a>
+    <a href="productCategory.html?category=desktop" class="homeCategory"><img src="images/pc-icon.png" alt="pc-icon" class="homeCategoryImage">Desktop</a>
+    <a href="productCategory.html?category=others" class="homeCategory"><img src="images/keyboard-mouse-icon.png" alt="keyboard-mouse-icon" class="homeCategoryImage">Accesories and Others</a>
+  </div>
+  </div>
+
+
+ 
+  <div class="aiBuilder" style="display: none">
+  <div class="aiInputContainer">
+     <input placeholder="Enter your budget..." class="aiInput">
+  </div> 
+  <div class="aiProductContent"></div>
+  </div>
+
+
+
+  <div class="trackingOrder" style="display: none;">
+  <div class="trackingOrder1">Track Your Order</div>
+  <div class="trackingOrderContent">
+    <div class="trackingOrder2">Order Number</div>
+    <input class="trackingOrder3">
+    <div class="trackingOrder2">Email</div>
+    <input class="trackingOrder3">
+    <button class="trackingOrderButton">Track</button>
+  </div>
+  </div>
+
+
+
+  <div class="cartSection" style="display: none">
+    <div class="cartSectionMainContainer">
+      <div class="cartSectionHeader">
+        <div class="cartHeaderProduct">Product</div>
+        <div class="cartHeaderPrice">Price</div>
+        <div class="cartHeaderQty">Quantity</div>
+        <div class="cartHeaderPrice">Total Price</div>
+      </div>
+      
+      <div class="cartSectionContainer">
+        <div class="cartSectionContent"></div>
+
+        <div class="cartSectionEnd">
+          <button class="cartSectionEndButton">Continue Shopping</button>
+          <button class="cartSectionEndButton">Clear Cart</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <div class="userAccount" style="display: none">
+  <div class="userAccountContent">
+   <div class="userAccountShow">
+    <a class="userLogin" id="showLogin">Log in</a>
+    <a class="userLogin" id="showRegister">Register</a>
+    </div>
+    
+  <div class="userForm">
+    <div class="user0">Welcome back! Sign in to your Account</div>
+    <input placeholder="Email Address" class="userInput">
+    <input type="Password" placeholder="Password" class="userInput">
+    <div class="userForgot">Forgot Password</div>
+    <button class="userButton">Login</button>
+    <div class="userMid"><span>or</span></div>
+    <a href="https://www.facebook.com" class="userBlueSocial">Sign in with Facebook <img src="images/facebook-icon.png" alt="" class="userSocialImage"></a>
+    <a href="https://mail.google.com" class="userOrangeSocial">Sign in with Google <img src="images/gmail-icon.png" alt="" class="userSocialImage"></a>
+  </div>
+
+      
+
+      <div class="registerForm" style="display:none;">
+        <div class="register0">Create your own Account</div>
+        <div class="register1">Name</div>
+        <input placeholder="Enter your full name" class="register2">
+        <div class="register1">Email</div>
+        <input placeholder="Enter your Email Address" class="register2">
+        <div class="register1">Password</div>
+        <input type="Password" placeholder="Enter your password" class="register2">
+        <div class="register1">Confirm password</div>
+        <input type="password" placeholder="Enter your password again" class="register2">
+        <button class="registerButton">Sign up</button>
+      </div>
+  </div>
+  </div>
+
+  
+
+  <script src="scripts/index.js" type="module"></script>
+</body>
+</html>

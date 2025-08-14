@@ -1,0 +1,1 @@
+export const images = [`images/msi-1.jpeg`,`images/msi-2.jpeg`,`images/msi-3.jpeg`]
