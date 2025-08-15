@@ -1,5 +1,6 @@
 import {products} from '../data/products.js'
 import {images} from '../data/images.js'
+import {cart} from '../data/cart.js'
 
 
 
@@ -18,10 +19,62 @@ if (product) {
       <img src="${product.images}" alt="${product.name}" class="product-image">
       <div class="product-name-container">${product.name}</div>
       <div class="product-price-container">₱${product.price.toLocaleString ()}</div>
-      <button class="cart-button-container">Add to Cart</button>
+      <button class="cart-button-container" data-id = "${product.id}"}>Add to Cart</button>
     </div>`
   })
 } 
+
+
+
+// Cart // 
+const cartSectionContainer = document.querySelector ('.cartSectionContent')
+
+
+document.body.addEventListener('click', btn => {
+  if (btn.target.classList.contains('cart-button-container')) {
+    const productId = Number (btn.target.dataset.id)  // Show Product Id // 
+
+    const productItem = products.find (product => product.id === productId)
+    const cartItem = cart.find (item => item.id === productId)
+
+    if (cartItem) cartItem.qty += 1 
+    else {cart.push ({
+      id: productId ,
+      images: productItem.images , 
+      name: productItem.name,
+      price: productItem.price,
+      qty: 1
+    })
+    }
+
+    cartSectionContainer.innerHTML = '';
+
+  cart.forEach (item => {
+    cartSectionContainer.innerHTML += 
+    `<div class="cartSectionProduct">
+        <img src="${item.images}" alt="" class="cartSectionImage">
+        <div class="cartSectionProductName">${item.name}</div>
+        <div class="cartSectionPrice">₱${item.price.toLocaleString ()}</div>
+        <div class="cartSectionQty">${item.qty}</div>
+        <div class="cartSectionPrice">₱${(item.price * item.qty).toLocaleString ()}</div>
+      </div>`
+  
+})
+
+    
+  }
+})
+
+  
+
+
+  
+
+
+
+
+
+ 
 
 // Ai Builder // 
 document.querySelector ('.aiInput').addEventListener ('keydown',event => {
@@ -104,24 +157,18 @@ document.getElementById ('userAccount').addEventListener ('click' , () => {
   userAccount && (userAccount.style.display = 'flex')
   productCategory && (productCategory.style.display = 'none')
 })
-
-
-
-// Cart Section // 
-const cartSectionContainer = document.querySelector ('.cartSectionContent')
-
-products.forEach (product => {
-  if (product.category === 'parts') {
-    cartSectionContainer.innerHTML += 
-    `<div class="cartSectionProduct">
-        <img src="${product.images}" alt="" class="cartSectionImage">
-        <div class="cartSectionProductName">${product.name}</div>
-        <div class="cartSectionPrice">₱${product.price.toLocaleString ()}</div>
-        <div class="cartSectionQty">1</div>
-        <div class="cartSectionPrice">₱${product.price.toLocaleString ()}</div>
-      </div>`
-  }
+document.getElementById ('body-content').addEventListener ('click' , () => {
+  homePage && (homePage.style.display = 'none')
+  aiBuilder && (aiBuilder.style.display = 'none')
+  trackingOrder && (trackingOrder.style.display = 'none')
+  cartSection && (cartSection.style.display = 'none')
+  userAccount && (userAccount.style.display = 'none')
+  productCategory && (productCategory.style.display = 'flex')
 })
+
+
+
+
 
 
 
