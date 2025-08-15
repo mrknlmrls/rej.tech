@@ -299,7 +299,16 @@ header {
 
 
 
-
+.cartSection {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
  .cartSectionHeader {
   display: flex;
   border-bottom: solid 2px #333;
@@ -327,14 +336,16 @@ header {
   display: flex;
   flex-direction: column;
   width: 1000px;
-  height: 575px;
+  height: auto; 
   border: solid 2px #333;
+  overflow-y: auto;
  }
  .cartSectionContainer {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   width: 100%;
+  padding: 25px 0;
  }
  .cartSectionProduct {
   display: flex;
